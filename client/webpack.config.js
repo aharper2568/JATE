@@ -21,14 +21,42 @@ module.exports = () => {
       new HtmlWebpackPlugin({
         title:'J.A.T.E',
         template: 'index.html'
+      }),
+      new WebpackPwaManifest({
+        name:'J.A.T.E',
+        background_color: '#7eb4e2',
+        theme_color: '#7eb4e2',
+        start_url: './',
+        publicPath: './',
+        fingerprints: false,
+        icons: [
+          {
+            src: path.resolve('./src/images/logo.png'),
+            sizes: [96,128]
+          }
+        ]
+      }),
+      new InjectManifest({
+
       })
     ],
 
     module: {
       rules: [
         {
-          test: /\.css$/,
+          test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+            },
+          },
         },
       ],
     },
