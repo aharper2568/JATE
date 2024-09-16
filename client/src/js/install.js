@@ -15,6 +15,7 @@ butInstall.addEventListener('click', async () => {
   }
 const result = await installPrompt.prompt();
 butInstall.setAttribute('hidden','');
+return result
 });
 
 // TODO: Add an handler for the `appinstalled` event
