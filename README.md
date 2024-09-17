@@ -19,4 +19,4 @@ This applcation is deployed using Render, a link can be found below; however, th
 
 ## Authors and Credits
 Features added developed in VSCode by Anthony Harper\
-[Article that showed much clarity on offline caching](https://developer.chrome.com/docs/workbox/modules/workbox-recipes)
+[Article that showed much clarity on offline caching](https://developer.chrome.com/docs/workbox/modules/workbox-recipes#static_resources_cache)
